@@ -1,0 +1,12 @@
+{
+  "name": "mehdi-online-school",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Japanese and English tutoring website preview",
+  "scripts": {
+    "test": "node --test scripts/site.test.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "^27.0.1"
+  }
+}
