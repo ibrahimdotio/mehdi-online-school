@@ -1,6 +1,5 @@
 'use strict';
-// Replace the reserved placeholder with the school's confirmed email address.
-// A placeholder never opens an email app or sends data to a server.
+// Confirmed school address. Visitors review and send in their own email app.
 window.SCHOOL_CONFIG = Object.freeze({
-  recipientEmail: 'hello@mehdionlineschool.example'
+  recipientEmail: 'mehdi.onlineschool@outlook.com'
 });

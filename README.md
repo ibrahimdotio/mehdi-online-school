@@ -11,11 +11,11 @@ A Japanese-first, bilingual tutoring website preview, hosted on GitHub Pages.
 - Custom multi-resolution `.ico`, SVG favicon and Apple touch icon.
 - Local functional checks and GitHub Pages publishing from `main` / `docs`.
 
-## Enquiry delivery: temporary setup
+## Enquiry delivery
 
-`docs/config.js` contains `hello@mehdionlineschool.example`, a reserved placeholder that does not receive email. The preview never sends form data to a server and never says a message was sent. Visitors can prepare and copy a draft.
+`docs/config.js` contains the school's confirmed address, `mehdi.onlineschool@outlook.com`. Visitors prepare a draft, then explicitly open their email app, review and send it. A copy option and the recipient address are provided for visitors using webmail.
 
-Once the school supplies its real enquiry address, replace the placeholder. The page will then offer an **Open email app** action: visitors review and send the message using their own email application. This does not provide server-side delivery or guarantee receipt. A hosted form service can be connected separately if required.
+This is not server-side form delivery and does not guarantee receipt. The site never reports a message as sent. A hosted form service can be connected separately if required. Confirm delivery with the school before launch; no test email has been sent automatically.
 
 ## Content and trust
 
@@ -31,7 +31,7 @@ Serve `docs/` with any static HTTP server. There is no production build. All ass
 
 For development checks: `npm ci --ignore-scripts && npm test`.
 
-GitHub Settings → Pages → Source: **Deploy from a branch**; branch: **main**; folder: **/docs**. No secret is needed for the placeholder enquiry mode. Run the local checks before pushing updates.
+GitHub Settings → Pages → Source: **Deploy from a branch**; branch: **main**; folder: **/docs**. Run the local checks before pushing updates. For GoDaddy Web Hosting (cPanel), upload the contents of `docs/` to the domain's document root. This static site is not a WordPress theme or a Websites + Marketing import package. Keep the GitHub URL as the review link; use the school's production hosting for the business launch.
 
 ## Privacy
 

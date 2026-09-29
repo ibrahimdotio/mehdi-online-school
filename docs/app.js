@@ -71,8 +71,8 @@ Object.assign(english, {
   "copyDraft": "Copy enquiry",
   "openEmail": "Open email app",
   "privacyLink": "Data & privacy",
-  "privacyTitle": "Data in this website preview",
-  "privacyText": "While delivery is not configured, enquiry details are processed only in your browser and are not sent to a server. Only your language preference is saved on this device. If an email address is connected, you review and send the message in your own email app. Fonts load from Google Fonts. No marketing analytics or advertising trackers are added."
+  "privacyTitle": "Your enquiry and privacy",
+  "privacyText": "Enquiry details are prepared in your browser. This website does not send them to a server or store them. You review and send the message in your own email app, or copy it into an email. Your email provider then handles delivery to the school. Only your language preference is saved on this device. Fonts load from Google Fonts. No marketing analytics or advertising trackers are added."
 });
 const translatedNodes = [...document.querySelectorAll('[data-i18n]')];
 const japanese = new Map(translatedNodes.map(node => [node, node.innerHTML]));
@@ -160,7 +160,7 @@ function updateEnquiryLanguage() {
   document.getElementById('preview-banner').hidden = emailConfigured;
   document.getElementById('enquiry-button-label').textContent = en ? 'Prepare my enquiry' : 'お問い合わせ内容を確認する';
   document.getElementById('delivery-note').textContent = emailConfigured
-    ? (en ? 'Review your draft, then send it in your email app. Nothing is sent automatically.' : '内容を確認してから、メールアプリで送信します。自動送信はされません。')
+    ? (en ? `Review your draft, then send it in your email app. Nothing is sent automatically. If your email app does not open, copy the draft and email it to ${recipientEmail}.` : `内容を確認してから、メールアプリで送信します。自動送信はされません。メールアプリが開かない場合は、下書きをコピーして ${recipientEmail} 宛てに送信してください。`)
     : (en ? 'Preview only: your message can be prepared and copied here. Email delivery is not connected yet.' : 'プレビュー版です。内容の作成・コピーはできますが、メールはまだ送信されません。');
   if (hasEnquiryDraft) {
     enquiryDraft.value = enquiryText();

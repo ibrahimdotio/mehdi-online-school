@@ -31,7 +31,7 @@ test('language switching translates every marked element and preserves form entr
  dom.window.close();
 });
 test('placeholder form makes a draft, never a sent confirmation or mailto',()=>{
- const {dom,d}=boot();fill(d);d.getElementById('language').click();
+ const {dom,d}=boot('hello@mehdionlineschool.example');fill(d);d.getElementById('language').click();
  d.getElementById('prepare-enquiry').click();
  assert.equal(d.getElementById('enquiry-result').hidden,false);
  assert.match(d.getElementById('enquiry-draft').value,/Test Parent/);
@@ -47,10 +47,11 @@ test('native validation prevents a draft with missing required fields',()=>{
  assert.equal(d.getElementById('enquiry-result').hidden,true);dom.window.close();
 });
 test('a configured email creates only an explicitly activated email-app link',()=>{
- const {dom,d}=boot('lessons@school.testdomain.org');fill(d);
+ const {dom,d}=boot();fill(d);
  d.getElementById('language').click();d.getElementById('prepare-enquiry').click();
  assert.equal(d.getElementById('email-enquiry').hidden,false);
- assert.match(d.getElementById('email-enquiry').href,/^mailto:lessons@school\.testdomain\.org\?subject=/);
+ assert.match(d.getElementById('email-enquiry').href,/^mailto:mehdi\.onlineschool@outlook\.com\?subject=/);
+ assert.match(d.getElementById('delivery-note').textContent,/mehdi\.onlineschool@outlook\.com/);
  assert.match(d.getElementById('enquiry-status').textContent,/Nothing has been sent yet/);
  assert.equal(d.getElementById('preview-banner').hidden,true);dom.window.close();
 });
